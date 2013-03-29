@@ -2,6 +2,7 @@ Provides support for Tapestry5 Web applications.
 
 Tapestry5 support is enabled by referencing the class TapestryContainer in the web.xml. For example:
 
+```xml
    <web-app>
        <context-param>
            <param-name>tapestry.app-package</param-name>
@@ -29,3 +30,4 @@ Tapestry5 support is enabled by referencing the class TapestryContainer in the w
         <url-pattern>/api/v1/*</url-pattern>
     </servlet-mapping>
    </web-app>
+```
