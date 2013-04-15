@@ -110,11 +110,18 @@
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-servlet</artifactId>
             <version>${project.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.tapestry</groupId>
             <artifactId>tapestry-core</artifactId>
             <version>${tapestry-release-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+            <version>${project.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
     <build>
