@@ -126,6 +126,20 @@
     </dependencies>
     <build>
         <plugins>
+            <!-- Enable auto-discovery of the Tapestry module -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Tapestry-Module-Classes>org.apache.tapestry5.services.JerseyModule</Tapestry-Module-Classes>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
@@ -139,7 +153,17 @@
     </build>
 
     <properties>
-        <tapestry-release-version>5.3.6</tapestry-release-version>
+        <tapestry-release-version>5.4-alpha-22</tapestry-release-version>
     </properties>
+
+    <repositories>
+
+        <!-- This repository is only needed when the Tapestry version is a preview release, rather
+             than a final release. -->
+        <repository>
+            <id>apache-staging</id>
+            <url>https://repository.apache.org/content/groups/staging/</url>
+        </repository>
+    </repositories>
 
 </project>
