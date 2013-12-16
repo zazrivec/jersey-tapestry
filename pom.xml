@@ -7,10 +7,24 @@
     <parent>
         <groupId>com.sun.jersey.contribs</groupId>
         <artifactId>jersey-contribs</artifactId>
-        <version>1.16</version>
+        <version>1.18</version>
     </parent>
 
     <artifactId>jersey-tapestry</artifactId>
+
+    <scm>
+        <connection>scm:git:git://github.com/zazrivec/jersey-tapestry.git</connection>
+        <url>http://github.com/zazrivec/jersey-tapestry</url>
+        <developerConnection>scm:git:git://github.com/zazrivec/jersey-tapestry.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <name>Internal Repository</name>
+            <url>${internal.repo.path}</url>
+        </repository>
+    </distributionManagement>
 
     <profiles>
         <profile>
@@ -26,6 +40,13 @@
                                 <link>http://jersey.java.net/nonav/apidocs/${project.version}/jersey/</link>
                             </links>
                             <notimestamp>true</notimestamp>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <configuration>
+
                         </configuration>
                     </plugin>
                 </plugins>
@@ -139,7 +160,11 @@
                     </archive>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.1</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
@@ -153,7 +178,9 @@
     </build>
 
     <properties>
-        <tapestry-release-version>5.4-alpha-22</tapestry-release-version>
+        <tapestry-release-version>5.4-alpha-29</tapestry-release-version>
+        <!--maven variable which points to your local repository -->
+        <internal.repo.path>file:///c:\Users\zazrivj\github\repo\releases</internal.repo.path>
     </properties>
 
     <repositories>
