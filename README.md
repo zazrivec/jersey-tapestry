@@ -1,5 +1,30 @@
 Provides support for Tapestry5 Web applications.
 
+First add maven dependency and repository to your project pom.xml
+
+```xml
+...
+    <dependency>
+        <groupId>com.sun.jersey.contribs</groupId>
+        <artifactId>jersey-tapestry</artifactId>
+        <version>1.18</version>
+        <exclusions>
+            <exclusion>
+                <artifactId>jersey-server</artifactId>
+                <groupId>com.sun.jersey</groupId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+...
+	<repositories>
+        <repository>
+            <id>zazrivec-releases</id>
+            <url>http://zazrivec.github.io/maven/releases</url>
+        </repository>
+	</repositories>
+...
+```
+
 Tapestry5 support is enabled by referencing the class TapestryContainer in the web.xml. For example:
 
 ```xml
