@@ -1,18 +1,19 @@
 package com.sun.jersey.spi.tapestry.container.servlet;
 
+import java.util.Map;
+import java.util.logging.Logger;
+
+import javax.servlet.ServletException;
+
+import org.apache.tapestry5.TapestryFilter;
+import org.apache.tapestry5.ioc.Registry;
+
 import com.sun.jersey.api.core.DefaultResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import com.sun.jersey.spi.container.WebApplication;
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 import com.sun.jersey.spi.container.servlet.WebConfig;
 import com.sun.jersey.spi.tapestry.container.TapestryComponentProviderFactory;
-import org.apache.tapestry5.TapestryFilter;
-import org.apache.tapestry5.ioc.Registry;
-
-import javax.inject.Singleton;
-import javax.servlet.ServletException;
-import java.util.Map;
-import java.util.logging.Logger;
 
 public class TapestryContainer extends ServletContainer {
 

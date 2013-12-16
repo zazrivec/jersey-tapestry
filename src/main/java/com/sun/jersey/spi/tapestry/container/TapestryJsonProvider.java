@@ -1,6 +1,5 @@
 package com.sun.jersey.spi.tapestry.container;
 
-import com.sun.jersey.core.util.ReaderWriter;
 import org.apache.tapestry5.json.JSONObject;
 
 import javax.ws.rs.Consumes;
@@ -42,8 +41,8 @@ public class TapestryJsonProvider implements MessageBodyReader<JSONObject>, Mess
             throws IOException {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         int result = entityReader.read();
-        while (result != -1) {
-            byte b = (byte) result;
+        while(result != -1) {
+            byte b = (byte)result;
             buf.write(b);
             result = entityReader.read();
         }
@@ -62,7 +61,7 @@ public class TapestryJsonProvider implements MessageBodyReader<JSONObject>, Mess
             Map<String, String> mediaTypeParameters = mediaType.getParameters();
             Reader entityReader = new InputStreamReader(entityStream, charset);
             return new JSONObject(readInputStreamAsString(entityReader));
-        } catch (Exception e) {
+        } catch(Exception e) {
             throw new WebApplicationException(e);
         }
     }
@@ -75,7 +74,7 @@ public class TapestryJsonProvider implements MessageBodyReader<JSONObject>, Mess
             PrintWriter pw = new PrintWriter(osw);
             jsonObject.print(pw);
             pw.flush();
-        } catch (Exception e) {
+        } catch(Exception e) {
             throw new WebApplicationException(e);
         }
     }
@@ -91,9 +90,9 @@ public class TapestryJsonProvider implements MessageBodyReader<JSONObject>, Mess
     }
 
     private Class<?> getDomainClass(Type genericType) {
-        if (genericType instanceof Class) {
+        if(genericType instanceof Class) {
             return (Class<?>) genericType;
-        } else if (genericType instanceof ParameterizedType) {
+        } else if(genericType instanceof ParameterizedType) {
             return (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
         } else {
             return null;

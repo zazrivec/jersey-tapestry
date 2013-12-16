@@ -1,22 +1,5 @@
 package com.sun.jersey.spi.tapestry.container;
 
-import com.sun.jersey.api.core.InjectParam;
-import com.sun.jersey.api.core.ResourceConfig;
-import com.sun.jersey.core.spi.component.ComponentContext;
-import com.sun.jersey.core.spi.component.ComponentScope;
-import com.sun.jersey.core.spi.component.ioc.IoCComponentProvider;
-import com.sun.jersey.core.spi.component.ioc.IoCComponentProviderFactory;
-import com.sun.jersey.core.spi.component.ioc.IoCManagedComponentProvider;
-import com.sun.jersey.core.spi.component.ioc.IoCProxiedComponentProvider;
-import com.sun.jersey.spi.inject.Inject;
-import org.apache.tapestry5.ioc.AnnotationProvider;
-import org.apache.tapestry5.ioc.ObjectLocator;
-import org.apache.tapestry5.ioc.Registry;
-import org.apache.tapestry5.ioc.ScopeConstants;
-import org.apache.tapestry5.ioc.annotations.Scope;
-
-import javax.inject.Named;
-import javax.ws.rs.WebApplicationException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Field;
@@ -25,6 +8,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.inject.Named;
+import javax.ws.rs.WebApplicationException;
+
+import org.apache.tapestry5.ioc.AnnotationProvider;
+import org.apache.tapestry5.ioc.Registry;
+import org.apache.tapestry5.ioc.ScopeConstants;
+import org.apache.tapestry5.ioc.annotations.Scope;
+
+import com.sun.jersey.api.core.InjectParam;
+import com.sun.jersey.api.core.ResourceConfig;
+import com.sun.jersey.core.spi.component.ComponentContext;
+import com.sun.jersey.core.spi.component.ComponentScope;
+import com.sun.jersey.core.spi.component.ioc.*;
+import com.sun.jersey.spi.inject.Inject;
 
 public class TapestryComponentProviderFactory implements IoCComponentProviderFactory {
 
