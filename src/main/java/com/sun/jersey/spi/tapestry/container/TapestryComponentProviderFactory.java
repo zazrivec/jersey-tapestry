@@ -232,8 +232,11 @@ public class TapestryComponentProviderFactory implements IoCComponentProviderFac
         }
 
         private void injectFields(Object o) throws IllegalAccessException {
-            for (final Field f : o.getClass().getDeclaredFields()) {
+            injectFields(o, o.getClass());
+        }
 
+        private void injectFields(Object o, Class<?> clazz) throws IllegalAccessException {
+            for (final Field f : clazz.getDeclaredFields()) {
                 if (isInjectable(f)) {
 
                     final AnnotationProvider ap = new AnnotationProvider()
@@ -245,6 +248,10 @@ public class TapestryComponentProviderFactory implements IoCComponentProviderFac
                     };
                     inject(o, f, registry.getObject(f.getType(), ap));
                 }
+            }
+
+            if (clazz.getSuperclass() != null) {
+                injectFields(o, clazz.getSuperclass());
             }
         }
 
