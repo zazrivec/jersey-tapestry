@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>jersey-tapestry</artifactId>
+    <version>1.18.1</version>
 
     <scm>
         <connection>scm:git:git://github.com/zazrivec/jersey-tapestry.git</connection>
@@ -63,20 +64,20 @@
                 <dependency>
                     <groupId>com.sun.jersey</groupId>
                     <artifactId>jersey-server</artifactId>
-                    <version>${project.version}</version>
+                    <version>${project.parent.version}</version>
                     <classifier>cobertura</classifier>
                 </dependency>
                 <dependency>
                     <groupId>com.sun.jersey</groupId>
                     <artifactId>jersey-client</artifactId>
-                    <version>${project.version}</version>
+                    <version>${project.parent.version}</version>
                     <scope>test</scope>
                     <classifier>cobertura</classifier>
                 </dependency>
                 <dependency>
                     <groupId>com.sun.jersey</groupId>
                     <artifactId>jersey-grizzly2</artifactId>
-                    <version>${project.version}</version>
+                    <version>${project.parent.version}</version>
                     <classifier>cobertura</classifier>
                     <scope>test</scope>
                 </dependency>
@@ -91,18 +92,18 @@
                 <dependency>
                     <groupId>com.sun.jersey</groupId>
                     <artifactId>jersey-server</artifactId>
-                    <version>${project.version}</version>
+                    <version>${project.parent.version}</version>
                 </dependency>
                 <dependency>
                     <groupId>com.sun.jersey</groupId>
                     <artifactId>jersey-client</artifactId>
-                    <version>${project.version}</version>
+                    <version>${project.parent.version}</version>
                     <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>com.sun.jersey</groupId>
                     <artifactId>jersey-grizzly2</artifactId>
-                    <version>${project.version}</version>
+                    <version>${project.parent.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -130,7 +131,7 @@
         <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-servlet</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -141,7 +142,7 @@
         <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-core</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -178,7 +179,7 @@
     </build>
 
     <properties>
-        <tapestry-release-version>5.4-alpha-29</tapestry-release-version>
+        <tapestry-release-version>5.4-beta-2</tapestry-release-version>
         <!--maven variable which points to your local repository -->
         <internal.repo.path>file:///c:\Users\zazrivj\github\repo\releases</internal.repo.path>
     </properties>
